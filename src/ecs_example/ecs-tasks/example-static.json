@@ -1,0 +1,24 @@
+[
+  {
+    "name": "example-static",
+    "image": "nginx:latest",
+    "memoryReservation": 256,
+    "essential": true,
+    "networkMode": "bridge",
+    "portMappings": [
+      {
+        "hostPort": 0,
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "example-static",
+        "awslogs-region": "us-west-1",
+        "awslogs-stream-prefix": "example-static"
+      }
+    }
+  }
+]

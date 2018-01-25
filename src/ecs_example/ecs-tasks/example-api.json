@@ -1,0 +1,24 @@
+[
+  {
+    "name": "example-api",
+    "image": "jmalloc/echo-server:latest",
+    "memoryReservation": 256,
+    "essential": true,
+    "networkMode": "bridge",
+    "portMappings": [
+      {
+        "hostPort": 0,
+        "containerPort": 8080,
+        "protocol": "tcp"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "example-api",
+        "awslogs-region": "us-west-1",
+        "awslogs-stream-prefix": "example-api"
+      }
+    }
+  }
+]
